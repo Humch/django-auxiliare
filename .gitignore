@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+
+build/
+dist/
+django_auxiliare.egg-info/
+docs/_build/
