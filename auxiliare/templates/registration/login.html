@@ -1,4 +1,4 @@
-{% extends "auxiliare.html" %}
+{% extends "base.html" %}
 
 {% load static from staticfiles %}
 
@@ -12,7 +12,7 @@
 
 {% block content %}
 
-<form method="post" action="{% url 'login' %}">
+<form method="post" action="{% url 'aux_login' %}">
 	<div class="row align-middle login-padding">
 		
 		{% if form.errors %}
