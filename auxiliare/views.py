@@ -5,14 +5,15 @@ from django.utils.decorators import method_decorator
 from django.views.generic import View
 
 class HomeView(View):
-    
+    """
+    Render for the home view of the project.
+    Modify menu according to installed apps
+    """
+
     template_name='auxiliare/home.html'
     
     def get(self, request):
-        """
-        Get method for the home view of the project.
-        Modify menu according to installed apps
-        """
+
         
         if 'paperworks' in settings.INSTALLED_APPS:
             paperworks = True

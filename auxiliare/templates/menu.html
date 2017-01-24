@@ -1,0 +1,66 @@
+<div class="title-bar" data-responsive-toggle="paperworks-menu" data-hide-for="medium">
+		<button class="menu-icon" type="button" data-toggle></button>
+		<div class="title-bar-title">Menu</div>
+</div>
+<div class="top-bar" id="paperworks-menu">
+	<div id="responsive-menu">
+		<div class="top-bar-left show-for-medium">
+			<ul class="menu">
+				<li class="menu-text">Auxiliare</li>
+				<li>
+					<a href="{% url 'aux_home' %}"><i class="fi-home"></i> Home</a>
+				</li>
+				{% if paperworks %}
+					<li>
+						<a href="{% url 'papermail-list' %}"><i class="fi-book"></i> Paperworks</a>
+					</li>
+				{% endif %}
+				{% if shopping_list %}
+					<li>
+						<a href="{% url 'shopping-list' %}"><i class="fi-shopping-cart"></i> Lists</a>
+					</li>
+				{% endif %}
+			</ul>
+		</div>
+		<div class="top-bar-right show-for-medium">
+			<ul class="menu">
+				<li>
+					Bonjour, {{ request.user }}
+				</li>
+				{% if user.is_superuser %}
+					<li>
+						<a href="{% url 'admin:index' %}"><i class="fi-torso-business"></i> Admin</a>
+					</li>
+				{% endif %}
+				<li class="li-menu">
+					<a href="{% url 'aux_logout' %}"><i class="fi-power menu-i"></i> Logout</a>
+				</li>
+			</ul>
+		</div>
+		<div class="top-bar-left hide-for-medium">
+			<ul class="menu">
+				<li>
+					<a href="{% url 'aux_home' %}"><i class="fi-home"></i></a>
+				</li>
+				{% if paperworks %}
+					<li>
+						<a href="{% url 'papermail-list' %}"><i class="fi-book"></i></a>
+					</li>
+				{% endif %}
+				{% if shopping_list %}
+					<li>
+						<a href="{% url 'shopping-list' %}"><i class="fi-shopping-cart"></i></a>
+					</li>
+				{% endif %}
+				{% if user.is_superuser %}
+					<li>
+						<a href="{% url 'admin:index' %}"><i class="fi-torso-business"></i></a>
+					</li>
+				{% endif %}
+				<li class="li-menu">
+					<a href="{% url 'aux_logout' %}"><i class="fi-power menu-i"></i></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
