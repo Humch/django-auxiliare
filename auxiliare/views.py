@@ -13,19 +13,8 @@ class HomeView(View):
     template_name='auxiliare/home.html'
     
     def get(self, request):
-
-        
-        if 'paperworks' in settings.INSTALLED_APPS:
-            paperworks = True
-        else:
-            paperworks = False
-        
-        if 'shoppinglist' in settings.INSTALLED_APPS:
-            shopping_list = True
-        else:
-            shopping_list = False
             
-        return render(request, self.template_name,{'paperworks':paperworks,'shopping_list':shopping_list})
+        return render(request, self.template_name)
     
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):

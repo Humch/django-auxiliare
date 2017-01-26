@@ -10,16 +10,9 @@
 				<li>
 					<a href="{% url 'aux_home' %}"><i class="fi-home"></i> Home</a>
 				</li>
-				{% if paperworks %}
-					<li>
-						<a href="{% url 'papermail-list' %}"><i class="fi-book"></i> Paperworks</a>
-					</li>
-				{% endif %}
-				{% if shopping_list %}
-					<li>
-						<a href="{% url 'shopping-list' %}"><i class="fi-shopping-cart"></i> Lists</a>
-					</li>
-				{% endif %}
+				<li>
+					<a href="{% url 'papermail-list' %}"><i class="fi-book"></i> Paperworks</a>
+				</li>
 			</ul>
 		</div>
 		<div class="top-bar-right show-for-medium">
@@ -42,16 +35,9 @@
 				<li>
 					<a href="{% url 'aux_home' %}"><i class="fi-home"></i></a>
 				</li>
-				{% if paperworks %}
-					<li>
-						<a href="{% url 'papermail-list' %}"><i class="fi-book"></i></a>
-					</li>
-				{% endif %}
-				{% if shopping_list %}
-					<li>
-						<a href="{% url 'shopping-list' %}"><i class="fi-shopping-cart"></i></a>
-					</li>
-				{% endif %}
+				<li>
+					<a href="{% url 'papermail-list' %}"><i class="fi-book"></i></a>
+				</li>
 				{% if user.is_superuser %}
 					<li>
 						<a href="{% url 'admin:index' %}"><i class="fi-torso-business"></i></a>
