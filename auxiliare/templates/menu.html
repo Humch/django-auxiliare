@@ -1,3 +1,4 @@
+{% load static from staticfiles %}
 <div class="title-bar" data-responsive-toggle="paperworks-menu" data-hide-for="medium">
 		<button class="menu-icon" type="button" data-toggle></button>
 		<div class="title-bar-title">Menu</div>
@@ -10,9 +11,16 @@
 				<li>
 					<a href="{% url 'aux_home' %}"><i class="fi-home"></i> Home</a>
 				</li>
-				<li>
-					<a href="{% url 'papermail-list' %}"><i class="fi-book"></i> Paperworks</a>
-				</li>
+				{% if paperworks_menu %}
+					<li>
+						<a href="{% url 'papermail-list' %}"><i class="fi-book"></i> Paperworks</a>
+					</li>
+				{% endif %}
+				{% if simplecost_menu %}
+					<li>
+						<a href="{% url 'expense-list' %}"><i class="fi-dollar-bill"></i> Expense List</a>
+					</li>
+				{% endif %}
 			</ul>
 		</div>
 		<div class="top-bar-right show-for-medium">
@@ -35,9 +43,16 @@
 				<li>
 					<a href="{% url 'aux_home' %}"><i class="fi-home"></i></a>
 				</li>
-				<li>
-					<a href="{% url 'papermail-list' %}"><i class="fi-book"></i></a>
-				</li>
+				{% if paperworks_menu %}
+					<li>
+						<a href="{% url 'papermail-list' %}"><i class="fi-book"></i></a>
+					</li>
+				{% endif %}
+				{% if simplecost_menu %}
+					<li>
+						<a href="{% url 'expense-list' %}"><i class="fi-dollar-bill"></i></a>
+					</li>
+				{% endif %}
 				{% if user.is_superuser %}
 					<li>
 						<a href="{% url 'admin:index' %}"><i class="fi-torso-business"></i></a>
@@ -50,3 +65,4 @@
 		</div>
 	</div>
 </div>
+<script src='{% static "auxiliare/js/auxiliare.js" %}'></script>

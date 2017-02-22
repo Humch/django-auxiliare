@@ -27,9 +27,9 @@
     </head>
 
     <body>
-		{% block menu %}
-			{% include 'menu.html' %}
-		{% endblock %}
+		<span id="menu_view">
+
+		</span>
 
 		{% block content %}
 
@@ -43,7 +43,10 @@
 		<script src='{% static "auxiliare/js/foundation-datepicker.fr.js" %}'></script>
 		<script src='{% static "auxiliare/js/foundation-datepicker.en-US.js" %}'></script>
 		<script src='{% static "auxiliare/js/foundation-datepicker.en-GB.js" %}'></script>
-
+		<script>
+				$('#menu_view').load('{% url 'aux_menu' %}');
+		</script>
+		
 	{% block javascript %}
 		
 	{% endblock %}
