@@ -1,7 +1,11 @@
 Django Auxiliare
 =================
 
-Django Auxiliare is a reusable application for Django
+Django Auxiliare is a dependency for Django reusable apps
+
+It isn't made to work alone
+
+It provide basics functions as static content or login view
 
 The package is hosted on `PyPI <http://pypi.python.org/pypi/django-auxiliare>`_
 

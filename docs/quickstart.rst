@@ -1,6 +1,3 @@
-Prerequisites
-===============
-
 Installing
 ============
 
@@ -18,16 +15,5 @@ Add django-auxiliare to your installed_apps ::
         'auxiliare',
     ]
 
-Configure your urls file
------------------------------
 
-Add django-auxiliare to urls file ::
-
-    from django.conf.urls import url, include
-    from auxiliare import urls
-    ...
-    urlpatterns = [
-        ...
-        url(r'^', include('auxiliare.urls')),
-    ]
 
