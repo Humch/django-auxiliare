@@ -171,3 +171,20 @@ div.margin-bottom {
 p.text-smaller {
   font-size: smaller;
 }
+
+/* MenuView : Override CSS Foundation rules to display menu bar on small screen */
+/* Display menu over one line only, override existing class */
+div.top-bar-left {
+  width: auto !important;
+}
+
+div.top-bar-right {
+  width: auto !important;
+}
+
+/* Reduce size on dropdown menu, fit icon without text, it's a new classe */
+ul.small-size {
+  min-width: auto !important;
+}
+
+/* MenuView : end */

@@ -4,6 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.views.generic import View
 
+from .models import Profile
+
 class HomeView(View):
     """
     Render for the home view of the project.
@@ -24,7 +26,7 @@ installed_apps = getattr(settings, 'INSTALLED_APPS','')
 class MenuView(View):
     """
     Render for the menu view of the project.
-    Modify menu according to installed apps
+    The menu bar changes according to installed apps
     """
 
     template_name='menu.html'
@@ -39,7 +41,9 @@ class MenuView(View):
             
             simplecost_menu = True
             
-        return render(request, self.template_name, {'paperworks_menu' : paperworks_menu, 'simplecost_menu' : simplecost_menu})
+        profile = Profile.objects.get(user=request.user)
+            
+        return render(request, self.template_name, {'paperworks_menu' : paperworks_menu, 'simplecost_menu' : simplecost_menu, 'profile' : profile})
     
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):

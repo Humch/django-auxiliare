@@ -7,10 +7,7 @@
 	<div id="responsive-menu">
 		<div class="top-bar-left show-for-medium">
 			<ul class="menu">
-				<li class="menu-text">Auxiliare</li>
-				<li>
-					<a href="{% url 'aux_home' %}"><i class="fi-home"></i> Home</a>
-				</li>
+				<li class="menu-text"><a href="{% url 'aux_home' %}">Auxiliare</a></li>
 				{% if paperworks_menu %}
 					<li>
 						<a href="{% url 'papermail-list' %}"><i class="fi-book"></i> Paperworks</a>
@@ -24,18 +21,22 @@
 			</ul>
 		</div>
 		<div class="top-bar-right show-for-medium">
-			<ul class="menu">
+			<ul class="dropdown menu" data-dropdown-menu>
 				<li>
-					Bonjour, {{ request.user }}
+					<a href='#'><img src="{% if profile.photo %}{{ profile.photo.url }}{% else %}{% static 'auxiliare/img/default_photo.png' %}{% endif %}" height="32" width="32"/></a>
+						<ul class="menu">
+							{% if user.is_superuser %}
+								<li>
+									<a href="{% url 'admin:index' %}"><i class="fi-torso-business"></i> Admin</a>
+								</li>
+                                                        {% endif %}
+                                                        <li>
+                                                                <a href="{% url 'aux_logout' %}"><i class="fi-power menu-i"></i> Logout</a>
+                                                        </li>
+						</ul>
 				</li>
-				{% if user.is_superuser %}
-					<li>
-						<a href="{% url 'admin:index' %}"><i class="fi-torso-business"></i> Admin</a>
-					</li>
-				{% endif %}
-				<li class="li-menu">
-					<a href="{% url 'aux_logout' %}"><i class="fi-power menu-i"></i> Logout</a>
-				</li>
+
+
 			</ul>
 		</div>
 		<div class="top-bar-left hide-for-medium">
@@ -53,14 +54,25 @@
 						<a href="{% url 'expense-list' %}"><i class="fi-dollar-bill"></i></a>
 					</li>
 				{% endif %}
-				{% if user.is_superuser %}
-					<li>
-						<a href="{% url 'admin:index' %}"><i class="fi-torso-business"></i></a>
-					</li>
-				{% endif %}
-				<li class="li-menu">
-					<a href="{% url 'aux_logout' %}"><i class="fi-power menu-i"></i></a>
+			</ul>
+		</div>
+		<div class="top-bar-right hide-for-medium">
+			<ul class="dropdown menu" data-dropdown-menu>
+				<li>
+					<a href='#'><img src="{% if profile.photo %}{{ profile.photo.url }}{% else %}{% static 'auxiliare/img/default_photo.png' %}{% endif %}" height="16" width="16"/></a>
+						<ul class="menu small-size">
+							{% if user.is_superuser %}
+								<li>
+									<a href="{% url 'admin:index' %}"><i class="fi-torso-business"></i></a>
+								</li>
+                                                        {% endif %}
+                                                        <li>
+                                                                <a href="{% url 'aux_logout' %}"><i class="fi-power menu-i"></i></a>
+                                                        </li>
+						</ul>
 				</li>
+
+
 			</ul>
 		</div>
 	</div>
