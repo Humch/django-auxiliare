@@ -1,6 +1,12 @@
 Changelog
 ===========
 
+Version 0.0.3
+--------------
+
+- extend User model to add profile data
+- add a profile view to edit profile informations
+
 Version 0.0.2
 --------------
 

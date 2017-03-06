@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% load static from staticfiles %}
+
+{% block title %}My profile : {{ profile.user }}{% endblock %}
+
+{% block content %}
+
+<div class="row margin-top">
+	<div class="small-4 columns">
+		<img class="thumbnail" src="{% if profile.photo %}{{ profile.photo.url }}{% else %}{% static 'auxiliare/img/default_photo.png' %}{% endif %}"/>
+	</div>
+	<div class="small-8 columns">
+		<h2>Username : {{ profile.user }}</h2>
+		<p>First Name : {{ profile.user.first_name }}</p>
+		<p>Last Name : {{ profile.user.last_name }}</p>
+		<p>Email : {{ profile.user.email }}</p>
+		<p>Birthday : {{ profile.birth_date }}</p>
+	</div>
+</div>
+
+{% endblock %}
+
+{% block javascript %}
+
+{% endblock %}

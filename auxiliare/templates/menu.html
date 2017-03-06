@@ -25,6 +25,9 @@
 				<li>
 					<a href='#'><img src="{% if profile.photo %}{{ profile.photo.url }}{% else %}{% static 'auxiliare/img/default_photo.png' %}{% endif %}" height="32" width="32"/></a>
 						<ul class="menu">
+							<li>
+                                                                <a href="{% url 'myprofile-details' profile.id %}"><i class="fi-widget menu-i"></i> Profile</a>
+                                                        </li>
 							{% if user.is_superuser %}
 								<li>
 									<a href="{% url 'admin:index' %}"><i class="fi-torso-business"></i> Admin</a>
