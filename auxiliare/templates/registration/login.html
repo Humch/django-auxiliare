@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load i18n %}
 {% load static from staticfiles %}
 
 {% block css %}
@@ -18,24 +18,24 @@
 		{% if form.errors %}
 		<div class="row">
 			<div class="callout secondary">
-				<p class="redcolor">Login incorrect, merci de refaire une tentative</p>
+				<p class="redcolor">{% trans "Username or password is incorrect. Retry." %}</p>
 			</div>
 		</div>
 		{% endif %}
 		{% csrf_token %}
 			<div class="row">
 				<div class="small-12 medium-6 large-4 small-centered columns">
-					<input type="text" placeholder="Nom Utilisateur" id="id_username" maxlength="254" name="username"/>
+					<input type="text" placeholder="{% trans "Username" %}" id="id_username" maxlength="254" name="username"/>
 				</div>
 			</div>
 			<div class="row">
 				<div class="small-12 medium-6 large-4 small-centered columns">
-					<input type="password" placeholder="Mot de passe" id="id_password" name="password"  />
+					<input type="password" placeholder="{% trans "Password" %}" id="id_password" name="password"  />
 				</div>
 			</div>
 			<div class="row">
 				<div class="small-6 small-centered columns">
-					<input type="submit" class="button input-align" value="Connexion" >
+					<input type="submit" class="button input-align" value="{% trans "Login" %}" >
 					<input type="hidden" name="next" value="{{ next }}" />
 				</div>
 			</div>

@@ -1,8 +1,8 @@
 {% extends "base.html" %}
-
+{% load i18n %}
 {% load static from staticfiles %}
 
-{% block title %}My profile : {{ profile.user }}{% endblock %}
+{% block title %}{% trans "My profile" %} : {{ profile.user }}{% endblock %}
 
 {% block content %}
 
@@ -11,11 +11,11 @@
 		<img class="thumbnail" src="{% if profile.photo %}{{ profile.photo.url }}{% else %}{% static 'auxiliare/img/default_photo.png' %}{% endif %}"/>
 	</div>
 	<div class="small-8 columns">
-		<h2>Username : {{ profile.user }}</h2>
-		<p>First Name : {{ profile.user.first_name }}</p>
-		<p>Last Name : {{ profile.user.last_name }}</p>
-		<p>Email : {{ profile.user.email }}</p>
-		<p>Birthday : {{ profile.birth_date }}</p>
+		<h2>{% trans "Username" %} : {{ profile.user }}</h2>
+		<p>{% trans "First Name" %} : {{ profile.user.first_name }}</p>
+		<p>{% trans "Last Name" %} : {{ profile.user.last_name }}</p>
+		<p>{% trans "Email" %} : {{ profile.user.email }}</p>
+		<p>{% trans "Birthday" %} : {{ profile.birth_date }}</p>
 	</div>
 </div>
 

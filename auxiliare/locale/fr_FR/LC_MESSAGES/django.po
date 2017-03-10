@@ -1,0 +1,74 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-10 13:55+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: templates/accounts/myprofile.html:5
+msgid "My profile"
+msgstr "Mon profil"
+
+#: templates/accounts/myprofile.html:14 templates/registration/login.html:28
+msgid "Username"
+msgstr "Nom d'utilisateur"
+
+#: templates/accounts/myprofile.html:15
+msgid "First Name"
+msgstr "Prénom"
+
+#: templates/accounts/myprofile.html:16
+msgid "Last Name"
+msgstr "Nom"
+
+#: templates/accounts/myprofile.html:17
+msgid "Email"
+msgstr "Email"
+
+#: templates/accounts/myprofile.html:18
+msgid "Birthday"
+msgstr "Anniversaire"
+
+#: templates/menu.html:14
+msgid "Paperworks"
+msgstr "Courrier"
+
+#: templates/menu.html:19
+msgid "Expense List"
+msgstr "Dépenses"
+
+#: templates/menu.html:30
+msgid "Profile"
+msgstr "Profil"
+
+#: templates/menu.html:34
+msgid "Admin"
+msgstr "Admin"
+
+#: templates/menu.html:38
+msgid "Logout"
+msgstr "Déconnexion"
+
+#: templates/registration/login.html:21
+msgid "Username or password is incorrect. Retry."
+msgstr "Le nom d'utilisateur ou le mot de passe est incorrect"
+
+#: templates/registration/login.html:33
+msgid "Password"
+msgstr "Mot de passe"
+
+#: templates/registration/login.html:38
+msgid "Login"
+msgstr "Connexion"

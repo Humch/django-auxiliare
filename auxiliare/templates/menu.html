@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load static from staticfiles %}
 <div class="title-bar" data-responsive-toggle="paperworks-menu" data-hide-for="medium">
 		<button class="menu-icon" type="button" data-toggle></button>
@@ -10,12 +11,12 @@
 				<li class="menu-text"><a href="{% url 'aux_home' %}">Auxiliare</a></li>
 				{% if paperworks_menu %}
 					<li>
-						<a href="{% url 'papermail-list' %}"><i class="fi-book"></i> Paperworks</a>
+						<a href="{% url 'papermail-list' %}"><i class="fi-book"></i> {% trans "Paperworks" %}</a>
 					</li>
 				{% endif %}
 				{% if simplecost_menu %}
 					<li>
-						<a href="{% url 'expense-list' %}"><i class="fi-dollar-bill"></i> Expense List</a>
+						<a href="{% url 'expense-list' %}"><i class="fi-dollar-bill"></i> {% trans "Expense List" %}</a>
 					</li>
 				{% endif %}
 			</ul>
@@ -26,15 +27,15 @@
 					<a href='#'><img src="{% if profile.photo %}{{ profile.photo.url }}{% else %}{% static 'auxiliare/img/default_photo.png' %}{% endif %}" height="32" width="32"/></a>
 						<ul class="menu">
 							<li>
-                                                                <a href="{% url 'myprofile-details' profile.id %}"><i class="fi-widget menu-i"></i> Profile</a>
+                                                                <a href="{% url 'myprofile-details' profile.id %}"><i class="fi-widget menu-i"></i> {% trans "Profile" %}</a>
                                                         </li>
 							{% if user.is_superuser %}
 								<li>
-									<a href="{% url 'admin:index' %}"><i class="fi-torso-business"></i> Admin</a>
+									<a href="{% url 'admin:index' %}"><i class="fi-torso-business"></i> {% trans "Admin" %}</a>
 								</li>
                                                         {% endif %}
                                                         <li>
-                                                                <a href="{% url 'aux_logout' %}"><i class="fi-power menu-i"></i> Logout</a>
+                                                                <a href="{% url 'aux_logout' %}"><i class="fi-power menu-i"></i> {% trans "Logout" %}</a>
                                                         </li>
 						</ul>
 				</li>
