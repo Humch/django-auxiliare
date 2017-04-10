@@ -188,3 +188,8 @@ ul.small-size {
 }
 
 /* MenuView : end */
+
+/* add auto margin for buttons in expense's list table */
+div.div-align {
+  margin: auto !important;
+}
